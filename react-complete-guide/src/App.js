@@ -80,7 +80,7 @@ class App extends Component {
           onClick={this.togglePersonHandler}>Change Name</button>
 
 
-          {persons
+          {persons}
             /* {
             this.state.showPerson === true ? 
             <div> 
@@ -100,7 +100,7 @@ class App extends Component {
                 name={this.state.persons[3].name} 
                 age = {this.state.persons[3].age}/> 
             </div> 
-            : null } */}
+            : null } */
       </div> 
     );
     //return React.createElement('div', {className:'App'}, React.createElement('h1',null,'Hi I am Anil'));
