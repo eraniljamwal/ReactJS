@@ -6,10 +6,10 @@ class App extends Component {
 
   state = {
     persons:[
-      {name : "Anil", age: 28},
-      {name : "Sunil", age: 25},
-      {name : "Ekta", age: 38},
-      {name : "Neha", age: 48},
+      { id: 'abc', name : "Anil", age: 28},
+      { id: 'def', name : "Sunil", age: 25},
+      { id: 'ghi', name : "Ekta", age: 38},
+      { id: 'jkl', name : "Neha", age: 48},
     ],
     otherHandler: "Some other Handler",
     showPerson: false
@@ -51,14 +51,13 @@ class App extends Component {
     
     let persons = null;
     if(this.state.showPerson){
-
-
       persons = (<div> 
         {this.state.persons.map((person,index) => {
             return <Person 
                     click = {() => this.deletePersonHandler(index)}
                     name= {person.name} 
-                    age = {person.age} />
+                    age = {person.age} 
+                    key = {person.id} />
           }
         )}
       </div>); 
@@ -70,7 +69,6 @@ class App extends Component {
         <button 
           style={style}
           onClick={this.togglePersonHandler}>Change Name</button>
-
         {persons}
       </div> 
     );
