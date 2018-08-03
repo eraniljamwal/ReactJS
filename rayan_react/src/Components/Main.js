@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Title from './Title';
 import PhotoWall from './PhotoWall';
 import AddPhoto from './AddPhoto';
+import {Route} from 'react-router-dom';
 
 
 class Main extends Component{
@@ -53,27 +54,20 @@ class Main extends Component{
     }
 
     render(){
-        return  <div>
-            {
-                this.state.screen === 'allPhoto' && (                    
-                <div className="photoGrid">
-                    <Title title={'Photowall'}/>
-                    <PhotoWall posts = {this.state.posts} onRemovePhoto = {this.removePhoto} onNavigate = {this.navigate} />                    
-                </div>
-                )
-            }   
-            {
-                this.state.screen === 'addPhoto' && (
-                <div>
-                    <AddPhoto  />
-                </div>
-                )
-            }    
-                </div>
-                
-                
-    }
+        return(  
+            <div>
+                {/* Metho 1 of Routing */}
+                <Route exact path = "/" render={() => (
+                    <div className="photoGrid">
+                        <Title title={'Photowall'}/>
+                        <PhotoWall posts = {this.state.posts} onRemovePhoto = {this.removePhoto} onNavigate = {this.navigate} />                    
+                    </div>
+                )} />
 
-    
+                {/* Method 2 or Routing */}
+                <Route path = "/AddPhoto" component={AddPhoto}/>
+            </div>
+        )       
+    }
 }
 export default Main;
