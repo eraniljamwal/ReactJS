@@ -2,16 +2,21 @@ import React from 'react';
 
 
 function Photo(props){
-    return <figure className="figure">      
-                <img className= "photo" src={props.post.imageLink} alt={props.post.description } />
-                <figcaption>{props.post.description}</figcaption>   
-                <div className="button-container">
-                    <button className="remove-button" 
-                    onClick= {()=> props.onRemovePhoto(props.post) }
-                    >Remove</button>
+    return (       
+        
+            <div className="col-sm-4">
+                <div  className="thumbnail">
+                <img className= "img-rounded" src={props.post.imageLink} alt={props.post.description } />
+                <div className="caption">
+                    {props.post.description}
+                </div>                
+                <button className="btn btn-primary" onClick= {()=> props.onRemovePhoto(props.post) }
+                >Remove</button>
                 </div>
-            </figure>
-    }
+            </div>
+        
+    )
+}
 // class Photo extends Component{
 //     //const post = this.props.post;
 //     render() {
