@@ -11,6 +11,5 @@ export function addPost(post){
         type: "ADD_POST",
         post
     }
-
 }
 
