@@ -10,6 +10,16 @@ h1{
     letter-spacing: -1px;
     color: red;
 }
+
+h1 a {
+    color: black;
+   text-decoration: none;
+}
+
+h1 a:hover {
+    color: black;
+   text-decoration: none;
+}
 @font-face{
     font-family: 'billbong';
     src: url("https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.eot?#iefix") format('embedded-opentype'), url("https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.woff") format('woff'), url("https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.ttf") format('truetype'), url("https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.svg#billabongregular") format('svg');
@@ -64,10 +74,21 @@ h1{
     background-size: contain;
 }
 
-.thumbnail> img{
-    width: 100%;
+.thumbnail a>img, .thumbnail>img {
+    margin-right: auto;
+    margin-left: auto;
     height: 200px;
-    max-height: 250px;
-    min-height: 200px;
+}
+.comment_btn{
+margin-left:10px;
+}
 
+.comment_container{
+    margin:0 auto;
+    color: blue;
+    max-width: 1000px;
+}
+
+.container{
+    max-width: 1000px;
 }
