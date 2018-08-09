@@ -3,6 +3,7 @@ import Title from './Title';
 import PhotoWall from './PhotoWall';
 import AddPhoto from './AddPhoto';
 import {Route} from 'react-router-dom';
+import Single from './Single';
 
 
 class Main extends Component{
@@ -22,7 +23,17 @@ class Main extends Component{
                     <Title title={'Add Photo'}/>   
                     <AddPhoto {...this.props}/>
                 </div>
-                )}/>              
+                )}/>   
+
+                <Route path="/single/:id" render={(params)=>(
+                <div>
+                    <Title title={'Comment Detail'}/> 
+                    <Single  {...this.props} {...params}/>
+                </div>
+                
+                )}
+
+                />           
 
             </div>
         )       
