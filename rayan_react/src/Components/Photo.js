@@ -2,24 +2,27 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 function Photo(props){
+    const post = props.post
     return (       
-        
+            
             <div className="col-sm-4">
                 <div  className="thumbnail">
-                <Link to={`/CommentPhoto/${props.post.id}`}>
-                    <img className= "img-rounded" src={props.post.imageLink} alt={props.post.description } />
+                <Link to = {`/single/${props.post.id}`}>
+                    <img className= "img-rounded" src={post.imageLink} alt={post.description } />
                 </Link>
                 <div className="caption">
-                    {props.post.description}
+                    {post.description}
                 </div>                
                 <button className="btn btn-primary" onClick= {()=> {
-                    props.removePost(props.index);
+                    props.startRemovingPost(props.index, post.id);
+                    props.history.push('/');
                 }}
                 >Remove</button>
                 
                 
                     <button type="button" className="btn btn-default btn-success comment_btn" >
-                        <span className="glyphicon glyphicon-comment"></span> Comment
+                        <span className="glyphicon glyphicon-comment"></span>   
+                        {(props.comments[props.post.id]) ? props.comments[post.id].length :  0 } 
                     </button>
                 
                 </div>

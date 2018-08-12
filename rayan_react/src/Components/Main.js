@@ -3,9 +3,20 @@ import Title from './Title';
 import PhotoWall from './PhotoWall';
 import AddPhoto from './AddPhoto';
 import {Route} from 'react-router-dom';
+import Single from './Single';
 
 
 class Main extends Component{
+
+    state = { loading: true }
+
+    componentDidMount(){
+        this.props.startLoadingPost().then(()=>{
+            this.setState({loading: false})
+        })
+        this.props.startLoadingComments()
+    }
+
     render(){
         return(  
             <div>                
@@ -22,7 +33,17 @@ class Main extends Component{
                     <Title title={'Add Photo'}/>   
                     <AddPhoto {...this.props}/>
                 </div>
-                )}/>              
+                )}/>   
+
+                <Route path="/single/:id" render={(params)=>(
+                <div>
+                    <Title title={'Comment Detail'}/> 
+                    <Single  loading= {this.state.loading} {...this.props} {...params}/>
+                </div>
+                
+                )}
+
+                />           
 
             </div>
         )       
