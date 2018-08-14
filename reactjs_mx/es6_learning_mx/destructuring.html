@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>ES6</title>
+  <script>
+
+    //Destructuring Array
+    const [num1, ,num3] = [1,2,3];
+    console.log(num1);
+    console.log(num3);
+    
+    // Destructuring Object
+    const myObj = {
+        name: 'Max',
+        age: 28
+    }
+    const {name,age} = myObj;
+    console.log(name); // prints 'Max'
+    console.log(age); // prints undefined
+    console.log(myObj); // prints {name: 'Max', age: 28}
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>
